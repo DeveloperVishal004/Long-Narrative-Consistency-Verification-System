@@ -1,0 +1,10 @@
+# Keep GitHub's language statistics focused on the actual source code,
+# so the repo is correctly identified as a Python project rather than being
+# dominated by the bundled public-domain novels and generated reports.
+# These attributes affect GitHub's display only — they change no file contents.
+
+data/**        linguist-vendored
+datasets/**    linguist-generated
+results/**     linguist-documentation
+docs/**        linguist-documentation
+*.md           linguist-documentation

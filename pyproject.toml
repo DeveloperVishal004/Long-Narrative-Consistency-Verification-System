@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lncvs"
+version = "0.1.0"
+description = "Long Narrative Consistency Verification System (LNCVS)"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "sentence-transformers>=2.2",
+    "chromadb>=0.4",
+    "rank-bm25>=0.2",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "langgraph>=1.2,<2.0",
+    "networkx>=3.0",
+    "tiktoken>=0.7",
+    "openai>=1.0",
+    "google-genai>=1.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black",
+    "ruff",
+    "mypy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# "scripts" added in Phase H4 so tests can import scripts.evaluate_with_graph's
+# wiring functions (build_fact_verifier, run_claim) directly, instead of
+# duplicating that wiring logic inside the test suite.
+pythonpath = ["src", "scripts"]
+addopts = "-m \"not slow\""
+markers = [
+    "slow: long-running tests (e.g. long-narrative validation on a real book) excluded from the default run; select with -m slow",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["lncvs"]
