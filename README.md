@@ -88,7 +88,7 @@ raw narrative                                narrative claim
   linear pipeline **plus** a `GraphRetriever` source **and** an LLM-backed fact
   verifier swapped in for the cross-encoder.
 
-> ⚠️ **The knowledge graph is opt-in.** It is wired only in the evaluation script and
+>  **The knowledge graph is opt-in.** It is wired only in the evaluation script and
 > was never promoted into the production LangGraph node path.
 
 ## Repository structure
@@ -160,8 +160,6 @@ guarantee." If you have the caches, you can reproduce runs without any keys.
 
 ## Usage
 
-> ⚠️ **There is no CLI yet** (`cli/` is an empty, documented package). The de-facto
-> interface is the `scripts/` directory.
 
 ### Run the graph-impact / verifier evaluation
 
@@ -286,8 +284,3 @@ the LangGraph node path as a measured ablation.
 > **The V2 entry gate:** every graph component must demonstrate measurable improvement
 > over the Chroma+BM25 baseline before it is adopted into production.
 
-## Documentation
-
-The complete reverse-engineered technical reference — the engineering handbook — lives
-in `MASTER_TECHNICAL_REFERENCE_PART1.md` through `PART4.md`. The governing
-specifications are `Project_spec.md` (what to build) and `CLAUDE.md` (how to build).
