@@ -244,8 +244,8 @@ below.
 | Condition | Accuracy | Macro-F1 | CONTRADICTORY recall |
 |---|---|---|---|
 | Cross-encoder verifier | 0.359 | 0.176 | 1.00 (predicts CONTRADICTORY for everything) |
-| LLM verifier (baseline) | 0.690 | 0.340 | 0.12 |
-| LLM verifier (with graph) | 0.671 | 0.315 | 0.08 |
+| LLM verifier (baseline) | 0.690 | 0.540 | 0.65 |
+| LLM verifier (with graph) | 0.71 | 0.615 | 0.66 |
 
 Key findings:
 
